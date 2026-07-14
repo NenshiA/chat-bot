@@ -48,7 +48,7 @@ no credit card needed, just sign up and click "Create API Key"):
 GROQ_API_KEY=gsk_xxxxxxxx
 GROQ_MODEL=llama-3.3-70b-versatile
 PORT=5000
-CLIENT_ORIGIN=http://localhost:3000
+CLIENT_ORIGIN=http://localhost:5173
 ```
 
 > Why Groq instead of the Claude/Anthropic API? Anthropic's API has no free tier —
@@ -94,7 +94,7 @@ cp .env.example .env
 npm start
 ```
 
-Frontend runs at `http://localhost:3000`. You'll see a chat bubble in the
+Frontend runs at `http://localhost:5173`. You'll see a chat bubble in the
 bottom-right corner — click it to open the chat window.
 
 ## Notes
