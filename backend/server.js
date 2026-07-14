@@ -8,7 +8,41 @@ const chatRoutes = require('./routes/chat');
 const app = express();
 
 // --- Middleware ---
-app.use(cors({ origin: config.clientOrigin }));
+const allowedOrigins = [
+
+  "http://localhost:5173",
+
+  "http://localhost:3000",
+
+  "https://chat-bot-cbwi.onrender.com", // replace with your deployed frontend
+
+];
+ 
+app.use(
+
+  cors({
+
+    origin(origin, callback) {
+
+      // Allow requests without an Origin header (e.g. Postman, curl)
+
+      if (!origin) return callback(null, true);
+ 
+      if (allowedOrigins.includes(origin)) {
+
+        return callback(null, true);
+
+      }
+ 
+      return callback(new Error("Not allowed by CORS"));
+
+    },
+
+    credentials: true,
+
+  })
+
+);
 app.use(express.json());
 
 // Basic rate limiting to protect the API from abuse
