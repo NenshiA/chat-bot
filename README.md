@@ -66,7 +66,7 @@ npm run dev     # with nodemon (auto-restart)
 npm start
 ```
 
-Backend runs at `http://localhost:5000`.
+Backend runs at `https://chat-bot-cbwi.onrender.com`.
 
 ### API Endpoints
 
@@ -80,7 +80,7 @@ Backend runs at `http://localhost:5000`.
 Example request:
 
 ```bash
-curl -X POST http://localhost:5000/api/chat \
+curl -X POST https://chat-bot-cbwi.onrender.com/api/chat \
   -H "Content-Type: application/json" \
   -d '{"sessionId":"abc123","message":"Hello!"}'
 ```
