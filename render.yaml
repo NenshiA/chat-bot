@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: chatbot-backend
+    env: node
+    plan: free
+    rootDirectory: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: chatbot-frontend
+    env: static
+    plan: free
+    rootDirectory: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://YOUR_BACKEND_URL.onrender.com/api
