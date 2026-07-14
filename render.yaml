@@ -4,8 +4,8 @@ services:
     env: node
     plan: free
     rootDir: .
-    buildCommand: cd backend && npm install
-    startCommand: cd backend && npm start
+    buildCommand: npm install
+    startCommand: npm start
     nodeVersion: 20
     envVars:
       - key: NODE_ENV
@@ -18,7 +18,7 @@ services:
     env: static
     plan: free
     rootDir: .
-    buildCommand: cd frontend && npm install && npm run build
+    buildCommand: npm install && npm run build
     staticPublishPath: frontend/build
     envVars:
       - key: REACT_APP_API_URL
